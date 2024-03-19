@@ -4,14 +4,17 @@ class car {
     this.model = model;
   }
 
-  car() {
-    return (document.getElementById(
-      "car"
-    ).innerHTML = `car name is ${name} and car model is ${this.model}`);
+  carInfo() {
+    return `car name is ${this.name} and car model is ${this.model}`;
   }
 }
 
-const car1 = new car();
+function addCar() {
+  document.getElementById("button").style.display = "none";
+  const car1 = new car();
 
-car1.name = prompt("enter car name : ");
-car1.model = prompt("enter car model :");
+  car1.name = prompt("enter car name : ");
+  car1.model = prompt("enter car model :");
+
+  document.getElementById("car").innerHTML = car1.carInfo();
+}
